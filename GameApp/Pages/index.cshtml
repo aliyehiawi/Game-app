@@ -1,0 +1,38 @@
+﻿@page
+@model GameApp.Pages.indexModel
+
+@{
+    ViewData["Title"] = "index";
+}
+
+<h1 class ="w-100 text-center">Welcome to our game</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4 w-100 text-center h6">
+        <form method="post">
+            <div class="form-group mt-5">
+                <label asp-for="Game.fullName" class="control-label"></label>
+                <input asp-for="Game.fullName" class="form-control" />
+                <span asp-validation-for="Game.fullName" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-5">
+                <label asp-for="Game.number1" class="control-label"></label>
+                <input asp-for="Game.number1" class="form-control" />
+                <span asp-validation-for="Game.number1" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-5">
+                <label asp-for="Game.number2" class="control-label"></label>
+                <input asp-for="Game.number2" class="form-control" />
+                <span asp-validation-for="Game.number2" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-5">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

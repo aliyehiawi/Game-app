@@ -1,0 +1,9 @@
+﻿@page
+@model GameApp.Pages.ResultModel
+@{
+    ViewData["Title"] = "Result";
+}
+
+<h1>Dear @Model.game.fullName</h1>
+<h2>@Model.result</h2>
+<h3>Your numbers were @Model.game.number1 and @Model.game.number2</h3>

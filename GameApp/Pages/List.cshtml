@@ -1,0 +1,46 @@
+﻿@page
+@model GameApp.Pages.ListModel
+
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>List</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Game[0].fullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Game[0].number1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Game[0].number2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Game[0].wonAmount)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Game) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.fullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.number1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.number2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.wonAmount)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
